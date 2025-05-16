@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>quiz</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+
+    <style>
+       .body{
+        background: url('https://static.vecteezy.com/system/resources/previews/000/622/344/original/beautiful-background-of-lines-with-gradients-vector.jpg');
+       }
+        .container{
+            color:white;
+            
+            background:url('https://tse1.mm.bing.net/th?id=OIP.MQpkXPbmmnoS1lS-v_XtQAHaEK&pid=Api&P=0&h=220');
+            border-radius: 25px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin-top: 60px;
+           justify-content: center;
+            border: 1px solid black;
+            width: 900px;
+            height: 1150px;
+        }
+       
+        .btn{
+            background:white;
+            color:#222;
+            font-weight: 500;
+            width: 20%;
+            border: 1px solid black;
+            padding:10px;
+            margin: 10px 0;
+            text-align: left;
+        }
+        .btn:hover{
+            background: linear-gradient(60deg,black,rgb(3, 3, 71));
+            color:white
+        }
+        /* .options{
+            display: flex;
+            flex-direction: column;
+            
+        } */
+         .numberone,.numbertwo,.numberthree,.numberfour{
+            margin: 40px;
+         }
+         .span{
+           
+         }
+         #q{
+            color:deeppink;
+         }
+         #u{
+            color:orange;
+         }
+         #i{
+            color:chartreuse
+         }
+         #z{
+            color:yellow
+         }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <center><h1 style="font-family:'Times New Roman', Times, serif;">   QUIZ APP</h1></center> -->
+         <center><div class="quiz">
+            <span id="q" style="font-size: 50px;"><b>Q</b></span>
+            <span  id="u" style="font-size: 50px;"><b>U</b></span>
+            <span id="i" style="font-size: 50px;"><B>I</B></span>
+            <span id="z" style="font-size: 50px;"><B>Z</B></span>
+         </div></center>
+        <div class="contents">
+            <div class="numberone">
+                <h3 id="question">Q1.Which planet is known as the “Red Planet”?</h3>
+            <div class="options"><br>
+            <input type="radio" name="q1" id="correct1" >Mars <br>
+            <input type="radio" name="q1">Saturn <br>
+            <input type="radio" name="q1">Neptune <br>
+            <input type="radio" name="q1">Jupiter <br>
+            </div>
+            <!-- <button class="btn" id="correct1">option1</button>
+            <button class="btn" >option1</button>
+            <button class="btn">option1</button>
+            <button class="btn">option1</button> -->
+            </div>
+            <div class="numbertwo">
+                <h3 id="question">Q2. What is the currency of Japan?</h3>
+                <br>
+                <input type="radio" name="q2" >Dollar
+                <br>
+                <input type="radio" name="q2" id="correct2">Japanese yen.
+ <br>                <input type="radio" name="q2">Euro <br>
+                <input type="radio" name="q2">Dinar
+            </div>
+            <div class="numberthree">
+                <h3 id="question">Q3.What comes once in a minute, twice in a moment, but never in a thousand years?</h3> <br>
+            <input type="radio" name="q3" >'u' letter
+            <br>
+            <input type="radio" name="q3">'None of these'
+            <br>
+            <input type="radio" name="q3" id="correct3">'M' letter
+            <br>
+            <input type="radio" name="q3">'D' letter
+            </div>
+            <div class="numberfour">
+                <h3 id="question">Q4.What type of fruit is typically used to make raisins?</h3> <br>
+            <input type="radio" name="q4" >Strawberry <br>
+            <input type="radio" name="q4">mango <br>
+            <input type="radio" name="q4" id="correct4">Grapes <br>
+            <input type="radio" name="q4">Pineapple
+            </div>
+            <button type="button" class="btn btn-outline-success " onclick="result()">Submit</button>
+            
+            <h3 class="h">Your score will be displayed here</h3>
+            <button type="button" class="btn btn-outline-warning" id="p1">Score</button>
+
+        </div>
+        
+    </div>
+   <script>
+    function result(){
+        let a= new Audio('/day12/gameend.mp3')
+        let score=0;
+    if(document.getElementById('correct1').checked)
+   {
+
+    score=score+10
+   }
+   if(document.getElementById('correct2').checked)
+   {
+    score=score+10
+   }
+   if(document.getElementById('correct3').checked)
+   {
+    score=score+10
+   }    if(document.getElementById('correct4').checked)
+   {
+    score=score+10
+   }
+    // let e=document.getElementsByClassName("h3");
+    // e.innerText={score}
+    // document.write("your score is "+score)
+    document.getElementById('p1').textContent=score
+    a.play()
+    }
+   </script>
+</body>
+
+</html>
